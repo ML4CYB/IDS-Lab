@@ -21,18 +21,18 @@ while invalid == True:
     option = input()
 
     if option == '1':
-        clustered_data = pd.read_csv("/mnt/c/Users/tjudd/OneDrive - Umich/ML4CYB/IDSL/HLMCC_code/HLMCC_python_new_data/Datasets/clustered_Dataset/LWSNDR Single Hop Indoor.csv")
+        clustered_data = pd.read_csv("/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/clustered_Dataset/LWSNDR Single Hop Indoor.csv")
         invalid = False
     elif option == '2':
-        clustered_data = pd.read_csv("/mnt/c/Users/tjudd/OneDrive - Umich/ML4CYB/IDSL/HLMCC_code/HLMCC_python_new_data/Datasets/clustered_Dataset/LWSNDR Multi Hop Indoor.csv")
+        clustered_data = pd.read_csv("/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/clustered_Dataset/LWSNDR Multi Hop Indoor.csv")
         invalid = False
     
     elif option == '3':
-        clustered_data = pd.read_csv("/mnt/c/Users/tjudd/OneDrive - Umich/ML4CYB/IDSL/HLMCC_code/HLMCC_python_new_data/Datasets/clustered_Dataset/satellite.csv")
+        clustered_data = pd.read_csv("/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/clustered_Dataset/satellite.csv")
         invalid = False
 
     elif option == '4':
-        clustered_data = pd.read_csv("/mnt/c/Users/tjudd/OneDrive - Umich/ML4CYB/IDSL/HLMCC_code/HLMCC_python_new_data/Datasets/clustered_Dataset/IoT_23_Data.csv")
+        clustered_data = pd.read_csv("/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/clustered_Dataset/IoT_23_Data.csv")
         invalid = False
     else:
         print('Invalid Option')

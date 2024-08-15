@@ -10,7 +10,7 @@ from scipy.spatial.distance import pdist, squareform
 from scipy.cluster.hierarchy import linkage, cut_tree
 
 
-if os.path.exists("/mnt/c/Users/tjudd/OneDrive - Umich/ML4CYB/IDSL/HLMCC_code/HLMCC_python_new_data/Graphs") == False:
+if os.path.exists("/home/ubuntu/IDS-Lab/HLMCC_python/Graphs") == False:
     os.makedirs('/mnt/c/Users/tjudd/OneDrive - Umich/ML4CYB/IDSL/HLMCC_code/HLMCC_python_new_data/Graphs')
 
 invalid = True
