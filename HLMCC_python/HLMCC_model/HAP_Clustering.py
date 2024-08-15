@@ -10,8 +10,8 @@ from scipy.spatial.distance import pdist, squareform
 from scipy.cluster.hierarchy import linkage, cut_tree
 
 
-if os.path.exists("/home/ubuntu/ids-Lab/HLMCC_python/Graphs") == False:
-    os.makedirs('/home/ubuntu/ids-Lab/HLMCC_python/Graphs')
+if os.path.exists("/home/ubuntu/IDS-Lab/HLMCC_python/Graphs") == False:
+    os.makedirs('/home/ubuntu/IDS-Lab/HLMCC_python/Graphs')
 
 invalid = True
 while invalid == True:
@@ -23,42 +23,42 @@ while invalid == True:
     option = input()
 
     if option == '1':
-        Data = pd.read_csv("/home/ubuntu/ids-Lab/HLMCC_python/Datasets/original_Dataset/All_Attacks.csv")
+        Data = pd.read_csv("/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/original_Dataset/All_Attacks.csv")
         Data.astype(float)
-        if os.path.exists("/home/ubuntu/ids-Lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor") == False:
-            os.makedirs('/home/ubuntu/ids-Lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor')
-        base_results_dir = '/home/ubuntu/ids-Lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor'
+        if os.path.exists("/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor") == False:
+            os.makedirs('/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor')
+        base_results_dir = '/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor'
         xcolumn = 'Humidity'
         ycolumn = 'Temperature'
         name = 'LWSNDR Single Hop Indoor'
         invalid = False
     elif option == '2':
-        Data = pd.read_csv("/home/ubuntu/ids-Lab/HLMCC_python/Datasets/original_Dataset/LWSNDR Multi Hop Indoor.csv")
+        Data = pd.read_csv("/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/original_Dataset/LWSNDR Multi Hop Indoor.csv")
         Data.astype(float)
-        if os.path.exists("/home/ubuntu/ids-Lab/HLMCC_python/Graphs/LWSNDR Multi Hop Indoor") == False:
-            os.makedirs('/home/ubuntu/ids-Lab/HLMCC_python/Graphs/LWSNDR Multi Hop Indoor')
-        base_results_dir = '/home/ubuntu/ids-Lab/HLMCC_python/Graphs/LWSNDR Multi Hop Indoor'
+        if os.path.exists("/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/LWSNDR Multi Hop Indoor") == False:
+            os.makedirs('/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/LWSNDR Multi Hop Indoor')
+        base_results_dir = '/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/LWSNDR Multi Hop Indoor'
         xcolumn = 'Humidity'
         ycolumn = 'Temperature'
         name = 'LWSNDR Multi Hop Indoor'
         invalid = False
 
     elif option == '3':
-        Data = pd.read_csv("/home/ubuntu/ids-Lab/HLMCC_python/Datasets/original_Dataset/satellite.csv")
-        if os.path.exists("/home/ubuntu/ids-Lab/HLMCC_python/Graphs/satellite") == False: 
-            os.makedirs('/home/ubuntu/ids-Lab/HLMCC_python/Graphs/satellite')
-        base_results_dir = '/home/ubuntu/ids-Lab/HLMCC_python/Graphs/satellite'
+        Data = pd.read_csv("/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/original_Dataset/satellite.csv")
+        if os.path.exists("/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/satellite") == False: 
+            os.makedirs('/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/satellite')
+        base_results_dir = '/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/satellite'
         xcolumn = 'V1'
         ycolumn = 'V2'
         name = 'satellite'    
         invalid = False
 
     elif option == '4':
-        Data = pd.read_csv("/home/ubuntu/ids-Lab/HLMCC_python/Datasets/original_Dataset/IoT_23_data.csv")
+        Data = pd.read_csv("/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/original_Dataset/IoT_23_data.csv")
         Data = Data.astype(float)
-        if os.path.exists("/home/ubuntu/ids-Lab/HLMCC_python/Graphs/IoT_23_data") == False: 
-            os.makedirs('/home/ubuntu/ids-Lab/HLMCC_python/Graphs/IoT_23_data')
-        base_results_dir = '/home/ubuntu/ids-Lab/HLMCC_python/Graphs/IoT_23_data'
+        if os.path.exists("/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/IoT_23_data") == False: 
+            os.makedirs('/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/IoT_23_data')
+        base_results_dir = '/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/IoT_23_data'
         xcolumn = 'Index'
         ycolumn = 'duration'
         name = 'IoT_23_data'    
@@ -113,7 +113,7 @@ last_col_index = -1
 new_column_name = 'ClusterLabel'
 Data_merge.columns.values[last_col_index] = new_column_name
 
-Data_merge.to_csv(f"/home/ubuntu/ids-Lab/HLMCC_python/Datasets/clustered_Dataset/{name}.csv", index=False)
+Data_merge.to_csv(f"/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/clustered_Dataset/{name}.csv", index=False)
 
 silhouette_vals = silhouette_samples(normalized_Data.iloc[:, :len(Data.columns) - 1], agg_labels)
 silhouette_avg = np.mean(silhouette_vals)
