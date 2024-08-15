@@ -23,7 +23,7 @@ while invalid == True:
     option = input()
 
     if option == '1':
-        Data = pd.read_csv("/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/original_Dataset/All_Attacks.csv")
+        Data = pd.read_csv("/home/ubuntu/IDS-Lab/HLMCC_python/Datasets/original_Dataset/LWSNDR Single Hop Indoor.csv")
         Data.astype(float)
         if os.path.exists("/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor") == False:
             os.makedirs('/home/ubuntu/IDS-Lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor')
