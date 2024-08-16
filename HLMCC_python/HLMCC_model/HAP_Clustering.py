@@ -146,7 +146,7 @@ plt.xlabel("Cluster label")
 plt.legend()
 plt.figtext(0.5, 0, f'Silhouette Score: {round(silhouette_avg, 3)}', ha="center", fontsize=12)
 plt.title(f"Silhouette plot")
-plt.savefig(f"{base_results_dir}/HAP{name}.tiff")
+plt.savefig(f"{base_results_dir}/{name}_Sil.tiff")
 
 # Clean the column by replacing non-integer values
 cleaned_labels_true = pd.to_numeric(Data.iloc[:, len(Data.columns) - 1], errors='coerce').fillna(-1).astype(int)
@@ -157,7 +157,7 @@ adjusted_rand = adjusted_rand_score(cleaned_labels_true, agg_labels)
 plt.figure(figsize=(8, 6), dpi=600)
 sns.scatterplot(x=Data.iloc[:, x_index], y=Data.iloc[:, y_index], hue=Label_HAP, palette=["#56B4E9", "red"])
 plt.title(f"{name} - HAP")
-plt.savefig(f"{base_results_dir}/{name}HAP.tiff", dpi=600)
+plt.savefig(f"{base_results_dir}/{name}_HAP.tiff", dpi=600)
 
 os.system('clear')
 print('Clustering Completed')
