@@ -103,7 +103,7 @@ agg_labels = agg_clustering.fit_predict(normalized_Data.iloc[:, :len(Data.column
 # Convert cluster labels using cut_tree and rename to "Normal" and "Anomaly"
 aggres = linkage(normalized_Data.iloc[:, :len(Data.columns) - 1], method='average')
 Label_HAP = cut_tree(aggres, n_clusters=[2]).flatten()
-Label_HAP = ["Anomaly" if label == 0 else "Normal" for label in Label_HAP]
+Label_HAP = ["Normal" if label == 0 else "Anomaly" for label in Label_HAP]
 
 Data_merge = Data.copy()
 Data_merge.iloc[:, -1] = Label_HAP
