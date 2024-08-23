@@ -24,7 +24,6 @@ while invalid == True:
 
     if option == '1':
         Data = pd.read_csv("/home/ubuntu/ids-lab/HLMCC_python/Datasets/original_Dataset/LWSNDR Single Hop Indoor.csv")
-        Data.astype(float)
         if os.path.exists("/home/ubuntu/ids-lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor") == False:
             os.makedirs('/home/ubuntu/ids-lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor')
         base_results_dir = '/home/ubuntu/ids-lab/HLMCC_python/Graphs/LWSNDR Single Hop Indoor'
@@ -34,7 +33,6 @@ while invalid == True:
         invalid = False
     elif option == '2':
         Data = pd.read_csv("/home/ubuntu/ids-lab/HLMCC_python/Datasets/original_Dataset/LWSNDR Multi Hop Indoor.csv")
-        Data.astype(float)
         if os.path.exists("/home/ubuntu/ids-lab/HLMCC_python/Graphs/LWSNDR Multi Hop Indoor") == False:
             os.makedirs('/home/ubuntu/ids-lab/HLMCC_python/Graphs/LWSNDR Multi Hop Indoor')
         base_results_dir = '/home/ubuntu/ids-lab/HLMCC_python/Graphs/LWSNDR Multi Hop Indoor'
@@ -55,7 +53,6 @@ while invalid == True:
 
     elif option == '4':
         Data = pd.read_csv("/home/ubuntu/ids-lab/HLMCC_python/Datasets/original_Dataset/IoT_23_data.csv")
-        Data = Data.astype(float)
         if os.path.exists("/home/ubuntu/ids-lab/HLMCC_python/Graphs/IoT_23_data") == False: 
             os.makedirs('/home/ubuntu/ids-lab/HLMCC_python/Graphs/IoT_23_data')
         base_results_dir = '/home/ubuntu/ids-lab/HLMCC_python/Graphs/IoT_23_data'
