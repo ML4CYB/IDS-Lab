@@ -95,7 +95,7 @@ labels = af.labels_
 
 #-------------------------------------------------------------------------------------------------------------
 #                                   Post Lab Activity (Different Metrics)
-# Replace the metric inside of the agglomerativeClustering function below with a different kind of distance
+# Replace the metric inside of the AgglomerativeClustering function below with a different kind of distance
 # metric (Euclidean, Cosine, Minkowski)
 #-------------------------------------------------------------------------------------------------------------
 agg_clustering = AgglomerativeClustering(n_clusters=2, metric ='manhattan', linkage='average')
