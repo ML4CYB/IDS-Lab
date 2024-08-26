@@ -110,8 +110,6 @@ last_col_index = -1
 new_column_name = 'ClusterLabel'
 Data_merge.columns.values[last_col_index] = new_column_name
 
-Data_merge.to_csv(f"/home/ubuntu/ids-lab/HLMCC_python/Datasets/clustered_Dataset/{name}.csv", index=False)
-
 silhouette_vals = silhouette_samples(normalized_Data.iloc[:, :len(Data.columns) - 1], agg_labels)
 silhouette_avg = np.mean(silhouette_vals)
 
@@ -155,6 +153,11 @@ plt.figure(figsize=(8, 6), dpi=600)
 sns.scatterplot(x=Data.iloc[:, x_index], y=Data.iloc[:, y_index], hue=Label_HAP, palette=["#56B4E9", "red"])
 plt.title(f"{name} - HAP")
 plt.savefig(f"{base_results_dir}/{name}_HAP.tiff", dpi=600)
+
+
+Label_HAP = ["n" if label == 'Normal' else "o" for label in Label_HAP]
+Data_merge.iloc[:, -1] = Label_HAP
+Data_merge.to_csv(f"/home/ubuntu/ids-lab/HLMCC_python/Datasets/clustered_Dataset/{name}.csv", index=False)
 
 os.system('clear')
 print('Clustering Completed')
