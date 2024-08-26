@@ -32,7 +32,7 @@ while invalid == True:
         invalid = False
 
     elif option == '4':
-        clustered_data = pd.read_csv("/home/ubuntu/ids-lab/HLMCC_python/Datasets/clustered_Dataset/IoT_23_Data.csv")
+        clustered_data = pd.read_csv("/home/ubuntu/ids-lab/HLMCC_python/Datasets/clustered_Dataset/IoT_23_data.csv")
         invalid = False
     else:
         print('Invalid Option')
