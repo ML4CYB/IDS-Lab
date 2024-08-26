@@ -93,6 +93,11 @@ af = AffinityPropagation(affinity='euclidean').fit(sim)
 cluster_centers_indices = af.cluster_centers_indices_
 labels = af.labels_
 
+#-------------------------------------------------------------------------------------------------------------
+#                                   Post Lab Activity (Different Metrics)
+# Replace the metric inside of the agglomerativeClustering function below with a different kind of distance
+# metric (Euclidean, Cosine, Minkowski)
+#-------------------------------------------------------------------------------------------------------------
 agg_clustering = AgglomerativeClustering(n_clusters=2, metric ='manhattan', linkage='average')
 agg_labels = agg_clustering.fit_predict(normalized_Data.iloc[:, :len(Data.columns) - 1])
 
