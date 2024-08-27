@@ -15,7 +15,7 @@ from scipy.cluster.hierarchy import linkage, cut_tree
 # guide
 #-------------------------------------------------------------------------------------------------------------
 metric = 'manhattan'
-linkage = 'average'
+linkage_method = 'average'
 
 
 if os.path.exists("/home/ubuntu/ids-lab/HLMCC_python/Graphs") == False:
@@ -101,12 +101,12 @@ af = AffinityPropagation(affinity='euclidean').fit(sim)
 cluster_centers_indices = af.cluster_centers_indices_
 labels = af.labels_
 
-agg_clustering = AgglomerativeClustering(n_clusters=2, metric = metric, linkage=linkage)
+agg_clustering = AgglomerativeClustering(n_clusters=2, metric = metric, linkage=linkage_method)
 agg_labels = agg_clustering.fit_predict(normalized_Data.iloc[:, :len(Data.columns) - 1])
 
 
 # Convert cluster labels using cut_tree and rename to "Normal" and "Anomaly"
-aggres = linkage(normalized_Data.iloc[:, :len(Data.columns) - 1], method=linkage)
+aggres = linkage(normalized_Data.iloc[:, :len(Data.columns) - 1], method=linkage_method)
 Label_HAP = cut_tree(aggres, n_clusters=[2]).flatten()
 Label_HAP = ["Normal" if label == 0 else "Anomaly" for label in Label_HAP]
 
