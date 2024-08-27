@@ -9,6 +9,14 @@ from sklearn.metrics import silhouette_samples, adjusted_rand_score
 from scipy.spatial.distance import pdist, squareform
 from scipy.cluster.hierarchy import linkage, cut_tree
 
+#-------------------------------------------------------------------------------------------------------------
+#                                   Post Lab Activity (Different Metrics)
+# Replace the metric inside of the AgglomerativeClustering function below with a different kind of distance
+# metric (Euclidean, Cosine, Minkowski)
+#-------------------------------------------------------------------------------------------------------------
+metric = 'manhattan'
+linkage = 'average'
+
 
 if os.path.exists("/home/ubuntu/ids-lab/HLMCC_python/Graphs") == False:
     os.makedirs('/home/ubuntu/ids-lab/HLMCC_python/Graphs')
@@ -93,17 +101,12 @@ af = AffinityPropagation(affinity='euclidean').fit(sim)
 cluster_centers_indices = af.cluster_centers_indices_
 labels = af.labels_
 
-#-------------------------------------------------------------------------------------------------------------
-#                                   Post Lab Activity (Different Metrics)
-# Replace the metric inside of the AgglomerativeClustering function below with a different kind of distance
-# metric (Euclidean, Cosine, Minkowski)
-#-------------------------------------------------------------------------------------------------------------
-agg_clustering = AgglomerativeClustering(n_clusters=2, metric ='manhattan', linkage='average')
+agg_clustering = AgglomerativeClustering(n_clusters=2, metric = metric, linkage=linkage)
 agg_labels = agg_clustering.fit_predict(normalized_Data.iloc[:, :len(Data.columns) - 1])
 
 
 # Convert cluster labels using cut_tree and rename to "Normal" and "Anomaly"
-aggres = linkage(normalized_Data.iloc[:, :len(Data.columns) - 1], method='average')
+aggres = linkage(normalized_Data.iloc[:, :len(Data.columns) - 1], method=linkage)
 Label_HAP = cut_tree(aggres, n_clusters=[2]).flatten()
 Label_HAP = ["Normal" if label == 0 else "Anomaly" for label in Label_HAP]
 
