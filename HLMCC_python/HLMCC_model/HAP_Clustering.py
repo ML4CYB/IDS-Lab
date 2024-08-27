@@ -10,9 +10,9 @@ from scipy.spatial.distance import pdist, squareform
 from scipy.cluster.hierarchy import linkage, cut_tree
 
 #-------------------------------------------------------------------------------------------------------------
-#                                   Post Lab Activity (Different Metrics)
-# Replace the metric inside of the AgglomerativeClustering function below with a different kind of distance
-# metric (Euclidean, Cosine, Minkowski)
+#                                   Post Lab Activity (Different Metrics & Linkages)
+# Replace the metric and linkage in the variables below with the metrics and linkages specified in your lab
+# guide
 #-------------------------------------------------------------------------------------------------------------
 metric = 'manhattan'
 linkage = 'average'
