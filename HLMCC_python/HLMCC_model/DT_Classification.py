@@ -75,6 +75,11 @@ fm = []
 pri = []
 pr_c = []
 sensitivity = []
+
+#-------------------------------------------------------------------------------------------------------------
+#                                           Post Lab Activity (Seeds)
+#         Remove, add, and replace the existing seeds with the seeds listed in your lab manual.
+#-------------------------------------------------------------------------------------------------------------
 seeds = [10, 100, 1000, 2000, 3500]
 
 # Train the model 5 times
