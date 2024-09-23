@@ -8,6 +8,8 @@ from sklearn.metrics import confusion_matrix, classification_report, f1_score, p
 from imblearn.over_sampling import SMOTE
 from collections import Counter
 
+os.system('clear')
+
 # Set random seed for reproducibility
 np.random.seed(10)
 
