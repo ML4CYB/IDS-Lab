@@ -9,6 +9,8 @@ from sklearn.metrics import silhouette_samples, adjusted_rand_score
 from scipy.spatial.distance import pdist, squareform
 from scipy.cluster.hierarchy import linkage, cut_tree
 
+os.system('clear')
+
 #-------------------------------------------------------------------------------------------------------------
 #                                   Post Lab Activity (Different Metrics & Linkages)
 # Replace the metric and linkage in the variables below with the metrics and linkages specified in your lab
